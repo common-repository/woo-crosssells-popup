@@ -1,0 +1,402 @@
+@font-face {
+	font-family: 'WooCommerce';
+	src: url('../../../Woocommerce/assets/fonts/WooCommerce.eot');
+	src: url('../../../Woocommerce/assets/fonts/WooCommerce.eot?#iefix') format('embedded-opentype'),
+		url('../../../Woocommerce/assets/fonts/WooCommerce.woff') format('woff'),
+		url('../../../Woocommerce/assets/fonts/WooCommerce.ttf') format('truetype'),
+		url('../../../Woocommerce/assets/fonts/WooCommerce.svg#WooCommerce') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/**
+ * Woocommerce CrossSells Popup Frontend Styles
+ */
+
+ /**
+ * Bootstrap v3.3.7 Modal (http://getbootstrap.com)
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+ .modal-open {
+ 	overflow: hidden;
+ }
+ .modal {
+ 	display: none;
+ 	overflow: hidden;
+ 	position: fixed;
+ 	top: 0;
+ 	right: 0;
+ 	bottom: 0;
+ 	left: 0;
+ 	z-index: 1050;
+ 	-webkit-overflow-scrolling: touch;
+ 	outline: 0;
+ }
+ .modal.fade .modal-dialog {
+ 	-webkit-transform: translate(0, -25%);
+ 	-ms-transform: translate(0, -25%);
+ 	-o-transform: translate(0, -25%);
+ 	transform: translate(0, -25%);
+ 	-webkit-transition: -webkit-transform 0.3s ease-out;
+ 	-o-transition: -o-transform 0.3s ease-out;
+ 	transition: transform 0.3s ease-out;
+ }
+ .modal.in .modal-dialog {
+ 	-webkit-transform: translate(0, 0);
+ 	-ms-transform: translate(0, 0);
+ 	-o-transform: translate(0, 0);
+ 	transform: translate(0, 0);
+ }
+ .modal-open .modal {
+ 	overflow-x: hidden;
+ 	overflow-y: auto;
+ }
+ .modal-dialog {
+ 	position: relative;
+ 	width: auto;
+ 	margin: 10px;
+ }
+ .modal-content {
+ 	position: relative;
+ 	background-color: #ffffff;
+ 	border: 1px solid #999999;
+ 	border: 1px solid rgba(0, 0, 0, 0.2);
+ 	border-radius: 6px;
+ 	-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+ 	box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+ 	-webkit-background-clip: padding-box;
+ 	background-clip: padding-box;
+ 	outline: 0;
+ }
+ .modal-backdrop {
+ 	position: fixed;
+ 	top: 0;
+ 	right: 0;
+ 	bottom: 0;
+ 	left: 0;
+ 	z-index: 1040;
+ 	background-color: #000000;
+ }
+ .modal-backdrop.fade {
+ 	opacity: 0;
+ 	filter: alpha(opacity=0);
+ }
+ .modal-backdrop.in {
+ 	opacity: 0.5;
+ 	filter: alpha(opacity=50);
+ }
+ .modal-header {
+ 	padding: 15px;
+ 	border-bottom: 1px solid #e5e5e5;
+ }
+ .modal-header .close {
+ 	margin-top: -2px;
+ }
+ .modal-title {
+ 	margin: 0;
+ 	line-height: 1.42857143;
+ }
+ .modal-body {
+ 	position: relative;
+ 	padding: 15px;
+ }
+ .modal-footer {
+ 	padding: 15px;
+ 	text-align: right;
+ 	border-top: 1px solid #e5e5e5;
+ }
+ .modal-footer .btn + .btn {
+ 	margin-left: 5px;
+ 	margin-bottom: 0;
+ }
+ .modal-footer .btn-group .btn + .btn {
+ 	margin-left: -1px;
+ }
+ .modal-footer .btn-block + .btn-block {
+ 	margin-left: 0;
+ }
+ .modal-scrollbar-measure {
+ 	position: absolute;
+ 	top: -9999px;
+ 	width: 50px;
+ 	height: 50px;
+ 	overflow: scroll;
+ }
+ @media (min-width: 768px) {
+ 	.modal-dialog {
+ 		width: 600px;
+ 		margin: 30px auto;
+ 	}
+ 	.modal-content {
+ 		-webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+ 		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+ 	}
+ 	.modal-sm {
+ 		width: 300px;
+ 	}
+ }
+ @media (min-width: 992px) {
+ 	.modal-lg {
+ 		width: 900px;
+ 	}
+ }
+ .clearfix:before,
+ .clearfix:after,
+ .modal-header:before,
+ .modal-header:after,
+ .modal-footer:before,
+ .modal-footer:after {
+ 	content: " ";
+ 	display: table;
+ }
+ .clearfix:after,
+ .modal-header:after,
+ .modal-footer:after {
+ 	clear: both;
+ }
+ .center-block {
+ 	display: block;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ }
+
+/**
+* Slick SliderVersion: 1.8.0
+* Author: Ken Wheeler
+* Website: http://kenwheeler.github.io
+*/
+.slick-slider
+{
+	position: relative;
+
+	display: block;
+	box-sizing: border-box;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	-webkit-touch-callout: none;
+	-khtml-user-select: none;
+	-ms-touch-action: pan-y;
+	touch-action: pan-y;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+	position: relative;
+
+	display: block;
+	overflow: hidden;
+
+	margin: 0;
+	padding: 0;
+}
+.slick-list:focus
+{
+	outline: none;
+}
+.slick-list.dragging
+{
+	cursor: pointer;
+	cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	-o-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+	position: relative;
+	top: 0;
+	left: 0;
+
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.slick-track:before,
+.slick-track:after
+{
+	display: table;
+
+	content: '';
+}
+.slick-track:after
+{
+	clear: both;
+}
+.slick-loading .slick-track
+{
+	visibility: hidden;
+}
+
+.slick-slide
+{
+	display: none;
+	float: left;
+
+	height: 100%;
+	min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+	float: right;
+}
+.slick-slide img
+{
+	display: block;
+}
+.slick-slide.slick-loading img
+{
+	display: none;
+}
+.slick-slide.dragging img
+{
+	pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+	display: block;
+}
+.slick-loading .slick-slide
+{
+	visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+	display: block;
+
+	height: auto;
+
+	border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+	display: none;
+}
+
+/**
+* WooCommerce Crosssells Popup CSS
+* Author: Ahmad Shyk
+* Website: http://ahmadshyk.com
+*/
+.crosssells-modal{
+	padding-right: 0;
+	text-align: left;
+}
+.crosssells-modal .modal-dialog{
+	width: 900px;
+	max-width: 95%;
+	margin: auto;
+}
+.crosssells-modal .modal-body{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+.crosssells-header{
+	padding: 0;
+}
+.success-message{
+	border-top: 3px solid #8fae1b;
+	background-color: #f7f6f7;
+	padding: 15px;
+	color: inherit;
+	list-style: none outside;
+	width: auto;
+	word-wrap: break-word;
+	font-size: 18px;
+}
+.success-message::before{
+	font-family: Woocommerce;
+	content: ' \e015';
+	color: #8fae1b;
+	position: relative;
+	top: 1.4px;
+}
+.crosssells-heading{
+	font-size: 30px;
+	font-weight: 500;
+	padding: 5px 0 20px 15px;
+}
+.crosssell-product-img img{
+	max-height: auto;
+	width: 100%;
+	margin-bottom: 1em;
+}
+.crosssells-crousel{
+	padding-bottom: 5px;
+}
+.slick-slide{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.crosssell-nav{
+	position: absolute;
+	display: block !important;
+	top: 45%;
+	font-size: 30px;
+	font-weight: 700;
+	background-color: #000;
+	color: #fff;
+	opacity: 0.5;
+	padding: 15px 10px;
+	cursor: pointer;
+	-webkit-transition: opacity 1s ease-in-out;
+	-moz-transition: opacity 1s ease-in-out;
+	-ms-transition: opacity 1s ease-in-out;
+	-o-transition: opacity 1s ease-in-out;
+	transition: opacity 1s ease-in-out;
+}
+.crosssell-nav:hover{
+	opacity: 1;
+}
+.crosssell-nav:focus{
+	outline: 0;
+}
+.crosssell-nav span{
+	position: relative;
+	top:-3px;
+}
+.crosssell-prev{
+	left: 5px;
+}
+.crosssell-next{
+	right: 5px;
+}
+.crosssell-product-info{
+	text-align: center;
+}
+.crosssells-continue-shopping{
+	position: relative;
+	top: 1.4px;
+}
+.crosssell-add-to-cart{
+	text-align: center;
+}
+.crosssells-modal .checkout-button{
+	margin: 0 !important;
+	margin-left: 10px !important;
+}
+.crosssell-product-title h2{
+	padding: .5em 0;
+	margin: 0;
+	font-size: 1em;
+}
+.crosssells-atc{
+	margin-top: 1em !important;
+}
+
+.crosssells-modal .woocommerce-Price-amount{
+	display: inline-block !important;
+}

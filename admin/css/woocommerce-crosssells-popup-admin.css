@@ -1,0 +1,25 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+.woocommerce-crosssells-admin-title{
+	margin: 10px 0 0px 0 !important;
+} 
+
+.crosssellspopup-instructions{
+	margin-top: 50px;
+}
+
+.crosssellspopup-instructions h2{
+	font-size: 24px;
+}
+
+.crosssellspopup-instructions p{
+	font-size: 16px;
+}
+
+fieldset{
+	font-size: 16px;
+	margin: 15px 0;
+}
